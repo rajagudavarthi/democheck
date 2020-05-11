@@ -1,0 +1,77 @@
+<mvc:View controllerName="Apple.Bindings.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Binding">
+				<content>
+					<f:SimpleForm id="SimpleFormDisplay354wide" editable="false" layout="ResponsiveGridLayout" title="Address" labelSpanXL="4" labelSpanL="3"
+						labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="Name"/>
+							<Input id="nameText" value="{details1>/Name}"/>
+							<Label text="ID"/>
+							<Input value="{details1>/id}"/>
+							<Label text="Number"/>
+							<Input value="{details1>/Phone} "/>
+							<Label text="Country"/>
+							<Input id="country" value="{details1>/Country}"/>
+						</f:content>
+					</f:SimpleForm>
+					<List id="idList" items="{emp1>/}" headerText="Products" mode="Delete" delete="handleDelete">
+						<items>
+							<ObjectListItem title="{emp1>id}" press="onListItemPress" number="{emp1>type}" >
+							
+							</ObjectListItem>
+						</items>
+					</List>
+					
+					<Table 
+		items="{job1>/}">		
+
+
+		
+	<!--		<Table id="idempTable"	inset="false"	items="{/emp}">-->
+
+		<columns>
+												<Column
+													width="12em">
+													<Text text=" skill" />
+												</Column>
+												<Column
+													minScreenWidth="Tablet"
+													demandPopin="true"
+													>
+													<Text text="location" />
+												</Column>
+												<Column
+													minScreenWidth="Tablet"
+												
+													hAlign="Right">
+													<Text text="Phone" />
+												</Column>
+									
+												<Column
+													hAlign="Right">
+													<Text text="Country" />
+												</Column>
+		</columns>
+		<items>
+							<ColumnListItem>
+									<cells>
+												<Text	text="{job1>skill}" />
+												<Text	text="{job1>location}" />
+												<Text	text="{job1>Phone}" />
+												<Text	text="{job1>Country}" />
+
+
+									</cells>
+							</ColumnListItem>
+		</items>
+	</Table>
+						
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
